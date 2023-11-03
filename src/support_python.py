@@ -71,8 +71,11 @@ def extract_moon_phases():
     url = f'https://mooncalendar.astro-seek.com/moon-phases-calendar-january-1994'
     driver.get(url)
     driver.find_element(By.XPATH, '/html/body/div[1]/a[2]').click()
+
+
+    
     for year in years:
-        for month in months[1:]:
+        for month in months:
             url = f'https://mooncalendar.astro-seek.com/moon-phases-calendar-{month}-{year}'
             driver.get(url)
 
@@ -86,7 +89,7 @@ def extract_moon_phases():
                     rows_cleaned = row.text.split('\n')
                     info = rows_cleaned[0]
                     phases_data.append([year,info])
-                print(f"mes {month} completed succesfully")
+                print(f'{month} completed succesfully')
             except:
                 print(f'error with {month}, {year}')
 
