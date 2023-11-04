@@ -1,3 +1,5 @@
 /data
 /notebooks/kodikoi.txt
 /notebooks/.ipynb_checkpoints
+/src/__pycache__
+/src/.ipynb_checkpoints
