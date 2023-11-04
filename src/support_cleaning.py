@@ -169,4 +169,12 @@ def cleaning_dow(x):
     else:
         return x
 
+def convert_object_to_category(df):
+    for c in df.select_dtypes(include="object"):
+        df[c] = df[c].astype("category")
+
+def downcast_int(df):
+    for c in df.select_dtypes(include="integer"):
+        df[c] = pd.to_numeric(df[c], downcast="integer")
+
     
